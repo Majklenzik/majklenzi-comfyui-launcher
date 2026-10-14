@@ -1,0 +1,33 @@
+{
+  "id": "my-first-workflow",
+  "title": "My first workflow",
+  "description": "Files starting with an underscore are ignored. Copy this file, rename it without the underscore and edit it.",
+  "tags": ["image", "example"],
+  "note": "Shown under the description. Use it for licence hints or VRAM needs.",
+
+  "workflow_url": "https://example.com/path/to/workflow.json",
+  "workflow_name": "my-first-workflow.json",
+
+  "nodes": [
+    "https://github.com/owner/some-custom-node",
+    { "url": "https://github.com/owner/another-node", "branch": "main" }
+  ],
+
+  "models": [
+    {
+      "label": "Main diffusion model",
+      "url": "https://huggingface.co/owner/repo/resolve/main/model.safetensors",
+      "dir": "diffusion_models",
+      "filename": "model.safetensors",
+      "size_gb": 9.5,
+      "gated": false
+    },
+    {
+      "label": "My LoRA",
+      "url": "https://huggingface.co/owner/repo/blob/main/lora.safetensors",
+      "dir": "loras",
+      "size_gb": 0.2,
+      "gated": true
+    }
+  ]
+}

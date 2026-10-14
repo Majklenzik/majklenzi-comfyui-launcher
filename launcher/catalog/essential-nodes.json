@@ -1,0 +1,12 @@
+{
+  "id": "essential-nodes",
+  "title": "Essential nodes pack",
+  "description": "The custom nodes most shared workflows rely on: KJNodes (Set/Get and utilities), rgthree (Power Lora Loader, Image Comparer, Fast Groups Muter) and Impact Pack with Subpack (FaceDetailer, SAM, Ultralytics detectors). No models are downloaded.",
+  "tags": ["nodes", "setup"],
+  "nodes": [
+    "https://github.com/kijai/ComfyUI-KJNodes",
+    "https://github.com/rgthree/rgthree-comfy",
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
+  ]
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ComfyUI Launcher</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234f7cff'/%3E%3Cpath d='M9 16l5 5 9-10' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1 id="title">ComfyUI Launcher</h1>
+      <span id="status" class="pill pill-off" role="status">Checking…</span>
+    </div>
+    <div class="actions">
+      <a id="open-comfy" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open ComfyUI</a>
+      <a id="open-jupyter" class="btn" href="#" target="_blank" rel="noopener noreferrer">Jupyter</a>
+      <button id="restart" class="btn" type="button">Restart ComfyUI</button>
+    </div>
+  </header>
+
+  <div id="sysline" class="sysline"></div>
+  <div id="banners"></div>
+
+  <nav class="tabs" aria-label="Sections">
+    <button type="button" class="tab" data-page="workflows">Workflows</button>
+    <button type="button" class="tab" data-page="models">Custom models</button>
+    <button type="button" class="tab" data-page="nodes">Custom nodes</button>
+    <button type="button" class="tab" data-page="settings">Settings</button>
+  </nav>
+
+  <div id="toast" class="toast" role="alert" hidden></div>
+
+  <main id="page"></main>
+
+  <section id="jobs-wrap" class="jobs" hidden>
+    <div class="jobs-head">
+      <h2>Downloads &amp; installs</h2>
+      <button id="clear-jobs" class="btn btn-small" type="button">Clear finished</button>
+    </div>
+    <div id="jobs"></div>
+  </section>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
