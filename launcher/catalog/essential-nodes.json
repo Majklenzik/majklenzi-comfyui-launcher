@@ -5,7 +5,7 @@
   "tags": ["nodes", "setup"],
   "nodes": [
     "https://github.com/kijai/ComfyUI-KJNodes",
-    "https://github.com/rgthree/rgthree-comfy",
+    { "url": "https://github.com/rgthree/rgthree-comfy", "branch": "main" },
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
     "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
   ]

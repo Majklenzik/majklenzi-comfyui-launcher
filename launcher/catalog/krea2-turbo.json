@@ -5,7 +5,7 @@
   "tags": ["image", "krea2", "models"],
   "note": "About 18.7 GB in total, make sure the volume has room. Krea 2 is released under the krea-2-community-license: read the LICENSE file in the Hugging Face repo before commercial use. The upscaler comes from a community mirror on Hugging Face; its SHA-256 is checked after download.",
   "nodes": [
-    "https://github.com/rgthree/rgthree-comfy",
+    { "url": "https://github.com/rgthree/rgthree-comfy", "branch": "main" },
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
     "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
   ],
