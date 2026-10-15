@@ -1,0 +1,50 @@
+{
+  "id": "krea2-turbo",
+  "title": "Krea 2 Turbo (fp8) - models and nodes",
+  "description": "Everything the Krea 2 Turbo workflow asks for: the fp8 diffusion model, the Qwen3-VL 4B text encoder, the Qwen Image VAE, the 4x NMKD Superscale upscaler, plus the node packs it uses (rgthree, Impact Pack, Impact Subpack). Import your own workflow .json in ComfyUI afterwards, nothing will be missing.",
+  "tags": ["image", "krea2", "models"],
+  "note": "About 18.7 GB in total, make sure the volume has room. Krea 2 is released under the krea-2-community-license: read the LICENSE file in the Hugging Face repo before commercial use. The upscaler comes from a community mirror on Hugging Face; its SHA-256 is checked after download.",
+  "nodes": [
+    "https://github.com/rgthree/rgthree-comfy",
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
+  ],
+  "models": [
+    {
+      "label": "Krea 2 Turbo (fp8 scaled)",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors",
+      "dir": "diffusion_models",
+      "filename": "krea2_turbo_fp8_scaled.safetensors",
+      "size_gb": 13.14,
+      "gated": false,
+      "sha256": "eb4dd8c612cfd10f64f25b057e6e6bbcb5737c94a7372177e456dbf7579502f1"
+    },
+    {
+      "label": "Qwen3-VL 4B text encoder (fp8 scaled)",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors",
+      "dir": "text_encoders",
+      "filename": "qwen3vl_4b_fp8_scaled.safetensors",
+      "size_gb": 5.24,
+      "gated": false,
+      "sha256": "54bd5144df0bbc25dd6ccadfcb826b521445a1b06ae5a42570bdd2974ca87094"
+    },
+    {
+      "label": "Qwen Image VAE",
+      "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors",
+      "dir": "vae",
+      "filename": "qwen_image_vae.safetensors",
+      "size_gb": 0.25,
+      "gated": false,
+      "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+    },
+    {
+      "label": "4x NMKD Superscale (upscaler)",
+      "url": "https://huggingface.co/Tenofas/ComfyUI/resolve/main/upscale_models/4xNMKDSuperscale_4xNMKDSuperscale.pt",
+      "dir": "upscale_models",
+      "filename": "4xNMKDSuperscale_4xNMKDSuperscale.pt",
+      "size_gb": 0.07,
+      "gated": false,
+      "sha256": "1d1b0078fe71446e0469d8d4df59e96baa80d83cda600d68237d655830821bcc"
+    }
+  ]
+}
