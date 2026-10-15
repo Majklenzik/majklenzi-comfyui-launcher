@@ -1,6 +1,8 @@
 import os
 import subprocess
+from importlib import metadata as real_metadata
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -122,12 +124,26 @@ def test_remove_symlink_only_unlinks(tmp_path):
     assert (outside / "keep.txt").exists()
 
 
-def test_constraints_pin_torch_and_numpy_major():
-    path = Path(nodes._constraints_file())
-    text = path.read_text()
-    assert "numpy>=" in text and "<" in text
-    for line in text.splitlines():
-        assert "+" not in line                 # no local CUDA suffix, so it matches any build
+def _fake_metadata(versions: dict):
+    """Stand-in for importlib.metadata, so the test does not depend on what the machine has installed."""
+    def version(name):
+        if name not in versions:
+            raise real_metadata.PackageNotFoundError(name)
+        return versions[name]
+    return SimpleNamespace(version=version, PackageNotFoundError=real_metadata.PackageNotFoundError)
+
+
+def test_constraints_pin_torch_and_numpy_major(monkeypatch):
+    monkeypatch.setattr(nodes, "metadata", _fake_metadata({
+        "torch": "2.9.1+cu128", "torchvision": "0.24.1+cu128", "torchaudio": "2.9.1+cu128", "numpy": "2.2.6"}))
+    lines = Path(nodes._constraints_file()).read_text().splitlines()
+    # no local CUDA suffix (+cu128), so the pin matches any build of the same version
+    assert lines == ["torch==2.9.1", "torchvision==0.24.1", "torchaudio==2.9.1", "numpy>=2,<3"]
+
+
+def test_constraints_when_nothing_is_installed(monkeypatch):
+    monkeypatch.setattr(nodes, "metadata", _fake_metadata({}))
+    assert Path(nodes._constraints_file()).read_text().strip() == ""
 
 
 def test_git_runs_with_restricted_protocols_and_no_prompts():
