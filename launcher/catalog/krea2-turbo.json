@@ -1,13 +1,14 @@
 {
   "id": "krea2-turbo",
   "title": "Krea 2 Turbo (fp8) - models and nodes",
-  "description": "Everything the Krea 2 Turbo workflow asks for: the fp8 diffusion model, the Qwen3-VL 4B text encoder, the Qwen Image VAE, the 4x NMKD Superscale upscaler, plus the node packs it uses (rgthree, Impact Pack, Impact Subpack). Import your own workflow .json in ComfyUI afterwards, nothing will be missing.",
+  "description": "Everything the Krea 2 Turbo workflow asks for: the fp8 diffusion model, the Qwen3-VL 4B text encoder, the Qwen Image VAE, the 4x NMKD Superscale upscaler, plus the node packs it uses (rgthree, Impact Pack, Impact Subpack, and RES4LYF, which adds the res_2s sampler). Import your own workflow .json in ComfyUI afterwards, nothing will be missing.",
   "tags": ["image", "krea2", "models"],
   "note": "About 18.7 GB in total, make sure the volume has room. Krea 2 is released under the krea-2-community-license: read the LICENSE file in the Hugging Face repo before commercial use. The upscaler comes from a community mirror on Hugging Face; its SHA-256 is checked after download.",
   "nodes": [
     { "url": "https://github.com/rgthree/rgthree-comfy", "branch": "main" },
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
-    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Subpack",
+    "https://github.com/ClownsharkBatwing/RES4LYF"
   ],
   "models": [
     {
